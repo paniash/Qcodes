@@ -13,7 +13,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
@@ -21,7 +20,7 @@ classifiers = [
 ]
 license = "MIT"
 readme = "README.rst"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "broadbean>=0.11.0",
     "h5netcdf>=0.14.1",
@@ -31,9 +30,9 @@ dependencies = [
     "jsonschema>=4.9.0",
     "matplotlib>=3.6.0",
     "networkx>=3.1",
-    "numpy>=1.22.4",
+    "numpy>=1.26.0",
     "packaging>=20.0",
-    "pandas>=1.5.0",
+    "pandas>=2.2.3",
     "pyarrow>=11.0.0", # will become a requirement of pandas. Installing explicitly silences a warning
     "pyvisa>=1.11.0, <1.17.0",
     "ruamel.yaml>=0.16.0,!=0.16.6",
@@ -218,7 +217,6 @@ markers = "serial"
 # and error on all other warnings
 filterwarnings = [
     'error',
-    'ignore:open_binary is deprecated:DeprecationWarning', # pyvisa-sim deprecated in 3.11 un-deprecated in 3.12. Drop filter once we drop support for 3.11
     'ignore:unclosed database in:ResourceWarning', # internal should be fixed
     'ignore:unclosed\ <socket\.socket:ResourceWarning', # not clear from where this is coming
     'ignore:Model_336 is deprecated:qcodes.utils.deprecate.QCoDeSDeprecationWarning',  # remove once deprecated Lakeshore Model_336 and its tests has been removed
