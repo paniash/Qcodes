@@ -1,10 +1,10 @@
 import re
 import textwrap
-from typing import TYPE_CHECKING, Any, Generic, Literal, NotRequired, overload
+from typing import TYPE_CHECKING, Any, Generic, Literal, NotRequired, Unpack, overload
 
 import numpy as np
 import numpy.typing as npt
-from typing_extensions import TypedDict, Unpack, deprecated
+from typing_extensions import TypedDict, deprecated
 
 import qcodes.validators as vals
 from qcodes.instrument import InstrumentBaseKWArgs, InstrumentChannel
@@ -711,7 +711,8 @@ class IVSweeper(KeysightB1500IVSweeper):
 
 
 class _ParameterWithStatus(
-    Parameter[ParameterDataTypeVar, "KeysightB1517A"], Generic[ParameterDataTypeVar]
+    Parameter[ParameterDataTypeVar, "KeysightB1517A"],
+    Generic[ParameterDataTypeVar],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     def __init__(self, *args: Any, **kwargs: Any):
         super().__init__(*args, **kwargs)
@@ -738,7 +739,8 @@ class _ParameterWithStatus(
 
 
 class _SpotMeasurementVoltageParameter(
-    _ParameterWithStatus[ParameterDataTypeVar], Generic[ParameterDataTypeVar]
+    _ParameterWithStatus[ParameterDataTypeVar],
+    Generic[ParameterDataTypeVar],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     def set_raw(self, value: ParamRawDataType) -> None:
         smu = self.instrument
@@ -781,7 +783,8 @@ class _SpotMeasurementVoltageParameter(
 
 
 class _SpotMeasurementCurrentParameter(
-    _ParameterWithStatus[ParameterDataTypeVar], Generic[ParameterDataTypeVar]
+    _ParameterWithStatus[ParameterDataTypeVar],
+    Generic[ParameterDataTypeVar],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     def set_raw(self, value: ParamRawDataType) -> None:
         smu = self.instrument

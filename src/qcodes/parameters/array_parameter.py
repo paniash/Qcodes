@@ -48,7 +48,7 @@ _SHAPE_UNSET: Any = object()
 
 class ArrayParameter(
     ParameterBase[ParameterDataTypeVar, InstrumentTypeVar_co],
-    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],
+    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     """
     A gettable parameter that returns an array of values.

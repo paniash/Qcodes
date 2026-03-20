@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 import warnings
-from typing import TYPE_CHECKING, Any, ClassVar, Generic, TypeVar
+from typing import TYPE_CHECKING, Any, ClassVar, TypeVar
 
 from qcodes.utils import QCoDeSDeprecationWarning
 
@@ -19,7 +19,9 @@ InstrumentModuleType = TypeVar("InstrumentModuleType", bound="InstrumentModule")
 _LOG = logging.getLogger(__name__)
 
 
-class MultiChannelInstrumentParameter(MultiParameter, Generic[InstrumentModuleType]):
+class MultiChannelInstrumentParameter[InstrumentModuleType: "InstrumentModule"](
+    MultiParameter
+):
     """
     Parameter to get or set multiple channels simultaneously.
 

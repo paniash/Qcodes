@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import unittest
-from typing import TYPE_CHECKING, Generic, TypeVar
+from typing import TYPE_CHECKING, TypeVar
 
 if TYPE_CHECKING:
     from qcodes.instrument import Instrument
@@ -28,7 +28,7 @@ Using `DriverTestCase` is pretty easy:
 T = TypeVar("T", bound="Instrument")
 
 
-class DriverTestCase(unittest.TestCase, Generic[T]):
+class DriverTestCase[T: "Instrument"](unittest.TestCase):
     # override this in a subclass
     driver: type[T] | None = None
     instrument: T

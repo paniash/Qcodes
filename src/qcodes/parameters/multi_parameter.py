@@ -52,7 +52,7 @@ def _is_nested_sequence_or_none(
 
 class MultiParameter(
     ParameterBase[ParameterDataTypeVar, InstrumentTypeVar_co],
-    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],
+    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     """
     A gettable parameter that returns multiple values with separate names,

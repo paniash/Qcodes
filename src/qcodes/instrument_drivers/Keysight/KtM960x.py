@@ -18,11 +18,12 @@ from qcodes.utils.deprecate import QCoDeSDeprecationWarning
 from . import KtM960xDefs
 
 if TYPE_CHECKING:
-    from typing_extensions import Unpack
+    from typing import Unpack
 
 
 class Measure(
-    MultiParameter[ParameterDataTypeVar, "KeysightM960x"], Generic[ParameterDataTypeVar]
+    MultiParameter[ParameterDataTypeVar, "KeysightM960x"],
+    Generic[ParameterDataTypeVar],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     def __init__(self, name: str, instrument: "KeysightM960x") -> None:
         super().__init__(

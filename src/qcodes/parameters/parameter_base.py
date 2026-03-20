@@ -1483,7 +1483,7 @@ P = TypeVar("P", bound=ParameterBase)
 
 
 # Does not implement __hash__, not clear it needs to
-class ParameterSet(MutableSet[P], Generic[P]):  # noqa: PLW1641
+class ParameterSet[P: ParameterBase](MutableSet[P]):  # noqa: PLW1641
     """A set-like container that preserves the insertion order of its parameters.
 
     This class implements the common set interface methods while maintaining

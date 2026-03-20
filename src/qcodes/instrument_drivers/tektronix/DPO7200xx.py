@@ -33,8 +33,7 @@ from qcodes.validators import Arrays, Enum, Numbers
 
 if TYPE_CHECKING:
     from collections.abc import Callable
-
-    from typing_extensions import Unpack
+    from typing import Unpack
 
 
 def strip_quotes(string: str) -> str:
@@ -963,7 +962,7 @@ class TektronixDPOTrigger(InstrumentChannel):
 
 class TektronixDPOMeasurementParameter(
     Parameter[ParameterDataTypeVar, "TektronixDPOMeasurement"],
-    Generic[ParameterDataTypeVar],
+    Generic[ParameterDataTypeVar],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     """
     A measurement parameter does not only return the instantaneous value

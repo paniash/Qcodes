@@ -11,9 +11,7 @@ from qcodes.parameters import DelegateParameter
 from qcodes.validators import Bool, Enum, Ints, Numbers
 
 if TYPE_CHECKING:
-    from typing import assert_never
-
-    from typing_extensions import Unpack
+    from typing import Unpack, assert_never
 
     from qcodes.parameters import Parameter
 

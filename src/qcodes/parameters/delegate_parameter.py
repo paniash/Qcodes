@@ -36,7 +36,7 @@ _SOURCE_UNSET: Any = object()
 
 class DelegateParameter(
     Parameter[ParameterDataTypeVar, InstrumentTypeVar_co],
-    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],
+    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     """
     The :class:`.DelegateParameter` wraps a given `source` :class:`Parameter`.

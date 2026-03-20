@@ -23,8 +23,7 @@ from qcodes.validators import Arrays, Bool, Enum, Ints, Numbers
 
 if TYPE_CHECKING:
     from collections.abc import Callable
-
-    from typing_extensions import Unpack
+    from typing import Unpack
 
 _T = TypeVar(
     "_T",
@@ -63,7 +62,8 @@ class FrequencyAxis(
 
 
 class Trace(
-    ParameterWithSetpoints[ParameterDataTypeVar, _T], Generic[ParameterDataTypeVar, _T]
+    ParameterWithSetpoints[ParameterDataTypeVar, _T],
+    Generic[ParameterDataTypeVar, _T],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     def __init__(
         self,

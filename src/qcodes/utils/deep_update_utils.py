@@ -7,7 +7,7 @@ K = TypeVar("K", bound=Hashable)
 L = TypeVar("L", bound=Hashable)
 
 
-def deep_update(
+def deep_update[K: Hashable, L: Hashable](
     dest: MutableMapping[K, Any], update: Mapping[L, Any]
 ) -> MutableMapping[K | L, Any]:
     """

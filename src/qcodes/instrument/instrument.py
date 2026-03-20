@@ -14,9 +14,7 @@ from .instrument_base import InstrumentBase, InstrumentBaseKWArgs
 from .instrument_meta import InstrumentMeta
 
 if TYPE_CHECKING:
-    from typing import Self
-
-    from typing_extensions import Unpack
+    from typing import Self, Unpack
 
     from qcodes.logger.instrument_logger import InstrumentLoggerAdapter
 
@@ -461,7 +459,7 @@ class Instrument(InstrumentBase, metaclass=instrument_meta_class):
         )
 
 
-def find_or_create_instrument(
+def find_or_create_instrument[T: "Instrument"](
     instrument_class: type[T],
     name: str,
     *args: Any,

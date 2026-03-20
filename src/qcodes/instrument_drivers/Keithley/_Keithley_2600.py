@@ -26,9 +26,9 @@ from qcodes.parameters import (
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
+    from typing import Unpack
 
     from qcodes_loop.data.data_set import DataSet
-    from typing_extensions import Unpack
 
 
 log = logging.getLogger(__name__)

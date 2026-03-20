@@ -27,7 +27,7 @@ LOG = logging.getLogger(__name__)
 
 class ParameterWithSetpoints(
     Parameter[ParameterDataTypeVar, InstrumentTypeVar_co],
-    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],
+    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     """
     A parameter that has associated setpoints. The setpoints is nothing

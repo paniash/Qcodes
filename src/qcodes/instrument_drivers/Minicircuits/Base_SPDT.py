@@ -13,7 +13,7 @@ from qcodes.instrument import (
 from qcodes.validators import Ints
 
 if TYPE_CHECKING:
-    from typing_extensions import Unpack
+    from typing import Unpack
 
     from qcodes.parameters import Parameter
 
@@ -22,7 +22,7 @@ log = logging.getLogger(__name__)
 _TINSTR = TypeVar("_TINSTR", bound="MiniCircuitsSPDTBase")
 
 
-class MiniCircuitsSPDTSwitchChannelBase(InstrumentChannel[_TINSTR], Generic[_TINSTR]):
+class MiniCircuitsSPDTSwitchChannelBase(InstrumentChannel[_TINSTR], Generic[_TINSTR]):  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
     def __init__(
         self,
         parent: _TINSTR,

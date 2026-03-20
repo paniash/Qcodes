@@ -25,8 +25,7 @@ from .message_builder import MessageBuilder
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
-
-    from typing_extensions import Unpack
+    from typing import Unpack
 
 
 class MeasurementModeDict(TypedDict):
@@ -500,7 +499,7 @@ class KeysightB1500(VisaInstrument):
 class IVSweepMeasurement(
     MultiParameter[ParameterDataTypeVar, KeysightB1500],
     StatusMixin,
-    Generic[ParameterDataTypeVar],
+    Generic[ParameterDataTypeVar],  # noqa: UP046 -- Generic kept because multi-inheritance with type params is not yet supported
 ):
     """
     IV sweep measurement outputs a list of measured current parameters

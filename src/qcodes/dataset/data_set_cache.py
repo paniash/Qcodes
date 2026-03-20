@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
-from typing import TYPE_CHECKING, Generic, Literal, TypeVar
+from typing import TYPE_CHECKING, Literal, TypeVar
 
 import numpy as np
 import numpy.typing as npt
@@ -39,7 +39,7 @@ DatasetType_co = TypeVar("DatasetType_co", bound="DataSetProtocol", covariant=Tr
 log = logging.getLogger(__name__)
 
 
-class DataSetCache(Generic[DatasetType_co]):
+class DataSetCache[DatasetType_co: "DataSetProtocol"]:
     """
     The DataSetCache contains a in memory representation of the
     data in this dataset as well a a method to progressively read data
