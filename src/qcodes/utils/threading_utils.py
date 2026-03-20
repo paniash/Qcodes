@@ -10,7 +10,7 @@ _LOG = logging.getLogger(__name__)
 T = TypeVar("T")
 
 
-class RespondingThread(threading.Thread, Generic[T]):
+class RespondingThread[T](threading.Thread):
     """
     Thread subclass for parallelizing execution. Behaves like a
     regular thread but returns a value from target, and propagates

@@ -22,7 +22,7 @@ if TYPE_CHECKING:
 
 
 class Measure(
-    MultiParameter[ParameterDataTypeVar, "KeysightM960x"], Generic[ParameterDataTypeVar]
+    MultiParameter[ParameterDataTypeVar, "KeysightM960x"], Generic[ParameterDataTypeVar]  # noqa: UP046
 ):
     def __init__(self, name: str, instrument: "KeysightM960x") -> None:
         super().__init__(

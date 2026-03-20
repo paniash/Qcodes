@@ -962,7 +962,7 @@ class TektronixDPOTrigger(InstrumentChannel):
 
 class TektronixDPOMeasurementParameter(
     Parameter[ParameterDataTypeVar, "TektronixDPOMeasurement"],
-    Generic[ParameterDataTypeVar],
+    Generic[ParameterDataTypeVar],  # noqa: UP046
 ):
     """
     A measurement parameter does not only return the instantaneous value

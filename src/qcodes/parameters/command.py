@@ -16,7 +16,7 @@ Output = TypeVar("Output")
 ParsedOutput = TypeVar("ParsedOutput")
 
 
-class Command(Generic[Output, ParsedOutput]):
+class Command[Output, ParsedOutput]:
     """
     Create a callable command from a string or function.
 

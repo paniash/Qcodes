@@ -28,7 +28,7 @@ def final_command(f: "Callable[P, MessageBuilder]") -> "Callable[P, MessageBuild
     return wrapper
 
 
-class CommandList(list[T], Generic[T]):
+class CommandList[T](list[T]):
     def __init__(self) -> None:
         super().__init__()
         self.is_final = False

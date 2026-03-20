@@ -34,7 +34,7 @@ log = logging.getLogger(__name__)
 
 class Parameter(
     ParameterBase[ParameterDataTypeVar, InstrumentTypeVar_co],
-    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],
+    Generic[ParameterDataTypeVar, InstrumentTypeVar_co],  # noqa: UP046
 ):
     """
     A parameter represents a single degree of freedom. Most often,

@@ -65,7 +65,7 @@ def range_str(
 T = TypeVar("T")
 
 
-class Validator(Generic[T]):
+class Validator[T]:
     """
     Base class for all value validators
     each validator should implement:

@@ -499,7 +499,7 @@ class KeysightB1500(VisaInstrument):
 class IVSweepMeasurement(
     MultiParameter[ParameterDataTypeVar, KeysightB1500],
     StatusMixin,
-    Generic[ParameterDataTypeVar],
+    Generic[ParameterDataTypeVar],  # noqa: UP046
 ):
     """
     IV sweep measurement outputs a list of measured current parameters

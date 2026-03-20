@@ -22,7 +22,9 @@ log = logging.getLogger(__name__)
 _TINSTR = TypeVar("_TINSTR", bound="MiniCircuitsSPDTBase")
 
 
-class MiniCircuitsSPDTSwitchChannelBase(InstrumentChannel[_TINSTR], Generic[_TINSTR]):
+class MiniCircuitsSPDTSwitchChannelBase[TINSTR: "MiniCircuitsSPDTBase"](
+    InstrumentChannel[TINSTR]
+):
     def __init__(
         self,
         parent: _TINSTR,

@@ -711,7 +711,7 @@ class IVSweeper(KeysightB1500IVSweeper):
 
 
 class _ParameterWithStatus(
-    Parameter[ParameterDataTypeVar, "KeysightB1517A"], Generic[ParameterDataTypeVar]
+    Parameter[ParameterDataTypeVar, "KeysightB1517A"], Generic[ParameterDataTypeVar]  # noqa: UP046
 ):
     def __init__(self, *args: Any, **kwargs: Any):
         super().__init__(*args, **kwargs)
@@ -738,7 +738,7 @@ class _ParameterWithStatus(
 
 
 class _SpotMeasurementVoltageParameter(
-    _ParameterWithStatus[ParameterDataTypeVar], Generic[ParameterDataTypeVar]
+    _ParameterWithStatus[ParameterDataTypeVar], Generic[ParameterDataTypeVar]  # noqa: UP046
 ):
     def set_raw(self, value: ParamRawDataType) -> None:
         smu = self.instrument
@@ -781,7 +781,7 @@ class _SpotMeasurementVoltageParameter(
 
 
 class _SpotMeasurementCurrentParameter(
-    _ParameterWithStatus[ParameterDataTypeVar], Generic[ParameterDataTypeVar]
+    _ParameterWithStatus[ParameterDataTypeVar], Generic[ParameterDataTypeVar]  # noqa: UP046
 ):
     def set_raw(self, value: ParamRawDataType) -> None:
         smu = self.instrument

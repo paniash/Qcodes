@@ -62,7 +62,7 @@ class FrequencyAxis(
 
 
 class Trace(
-    ParameterWithSetpoints[ParameterDataTypeVar, _T], Generic[ParameterDataTypeVar, _T]
+    ParameterWithSetpoints[ParameterDataTypeVar, _T], Generic[ParameterDataTypeVar, _T]  # noqa: UP046
 ):
     def __init__(
         self,

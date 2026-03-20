@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 
 class TraceParameter(
-    Parameter[ParameterDataTypeVar, "AlazarTechATS"], Generic[ParameterDataTypeVar]
+    Parameter[ParameterDataTypeVar, "AlazarTechATS"], Generic[ParameterDataTypeVar]  # noqa: UP046
 ):
     """
     A parameter that keeps track of if its value has been synced to

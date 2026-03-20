@@ -28,7 +28,7 @@ Using `DriverTestCase` is pretty easy:
 T = TypeVar("T", bound="Instrument")
 
 
-class DriverTestCase(unittest.TestCase, Generic[T]):
+class DriverTestCase[T: "Instrument"](unittest.TestCase):
     # override this in a subclass
     driver: type[T] | None = None
     instrument: T

@@ -43,7 +43,7 @@ def _api_call_task(
     return retval
 
 
-def _normalize_params(*args: T) -> list[T]:
+def _normalize_params[T](*args: T) -> list[T]:
     args_out: list[T] = []
     for arg in args:
         if isinstance(arg, ParameterBase):

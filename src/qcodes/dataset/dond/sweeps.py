@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound=np.generic)
 
 
-class AbstractSweep(ABC, Generic[T]):
+class AbstractSweep[T: np.generic](ABC):
     """
     Abstract sweep class that defines an interface for concrete sweep classes.
     """
@@ -195,7 +195,7 @@ class LogSweep(AbstractSweep[np.floating]):
         return self._get_after_set
 
 
-class ArraySweep(AbstractSweep, Generic[T]):
+class ArraySweep[T: np.generic](AbstractSweep):
     """
     Sweep the values of a given array.
 

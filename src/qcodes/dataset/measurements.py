@@ -74,8 +74,8 @@ SubscriberType = tuple[
     Callable[..., Any], MutableSequence[Any] | MutableMapping[Any, Any]
 ]
 
-ParameterResultType: TypeAlias = tuple[ParameterBase, ValuesType]
-DatasetResultDict: TypeAlias = dict[ParamSpecBase, npt.NDArray]
+type ParameterResultType = tuple[ParameterBase, ValuesType]
+type DatasetResultDict = dict[ParamSpecBase, npt.NDArray]
 
 
 class ParameterTypeError(Exception):

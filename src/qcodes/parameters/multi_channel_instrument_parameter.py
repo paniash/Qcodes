@@ -19,7 +19,9 @@ InstrumentModuleType = TypeVar("InstrumentModuleType", bound="InstrumentModule")
 _LOG = logging.getLogger(__name__)
 
 
-class MultiChannelInstrumentParameter(MultiParameter, Generic[InstrumentModuleType]):
+class MultiChannelInstrumentParameter[InstrumentModuleType: "InstrumentModule"](
+    MultiParameter
+):
     """
     Parameter to get or set multiple channels simultaneously.
 

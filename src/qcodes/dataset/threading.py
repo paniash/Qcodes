@@ -21,8 +21,8 @@ if TYPE_CHECKING:
     from qcodes.dataset.data_set_protocol import ValuesType
     from qcodes.parameters import ParamDataType, ParameterBase
 
-ParamMeasT: TypeAlias = "ParameterBase | Callable[[], None]"
-OutType: TypeAlias = "list[tuple[ParameterBase, ValuesType]]"
+type ParamMeasT = "ParameterBase | Callable[[], None]"
+type OutType = "list[tuple[ParameterBase, ValuesType]]"
 
 T = TypeVar("T")
 

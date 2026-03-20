@@ -85,7 +85,7 @@ All numpy complex types
 concrete_complex_types = (*numpy_concrete_complex, complex)
 complex_types = (*numpy_concrete_complex, complex)
 
-NumberType: TypeAlias = int | float | np.integer | np.floating
+type NumberType = int | float | np.integer | np.floating
 """
 Python or NumPy real number.
 """

@@ -39,7 +39,7 @@ DatasetType_co = TypeVar("DatasetType_co", bound="DataSetProtocol", covariant=Tr
 log = logging.getLogger(__name__)
 
 
-class DataSetCache(Generic[DatasetType_co]):
+class DataSetCache[DatasetType_co: "DataSetProtocol"]:
     """
     The DataSetCache contains a in memory representation of the
     data in this dataset as well a a method to progressively read data
